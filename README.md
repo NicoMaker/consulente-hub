@@ -6,65 +6,69 @@ una pagina pensata per essere mostrata a clienti: niente contatti pubblici,
 niente descrizioni di servizi, niente pulsanti "prenota una consulenza". In
 testata compare un'etichetta "Privato" a ricordarlo.
 
-Se in futuro la ospiti online, ricordati che qualunque pagina pubblicata su
-un dominio pubblico è comunque raggiungibile da chi conosce l'indirizzo:
-per tenerla davvero privata usa un hosting con protezione tramite password,
-oppure tienila solo in locale sul tuo computer (vedi sotto).
-
 ## Struttura del progetto
 
 ```
 index.html
+data.json           → ⭐ QUI SI PERSONALIZZA: nome, testi, aree e link
 css/
-  styles.css       → design tokens (colori, font), layout, componenti
+  styles.css        → design tokens (colori, font), layout, componenti
   animations.css    → transizioni pagina, grafico ambientale, reduced-motion
 js/
-  data.js           → ⭐ QUI SI PERSONALIZZA: nome, testi, aree e link
+  data.js            → dichiara solo lo stato, i contenuti sono in data.json
   icons.js           → libreria icone SVG
-  render.js           → costruisce l'HTML da data.js
-  navigation.js        → passaggio home ↔ dettaglio (con #hash condivisibile)
-  animations.js         → intro + grafico "di crescita" animato in loop
-  init.js                → avvio
+  render.js          → costruisce l'HTML a partire dai dati caricati
+  navigation.js       → passaggio home ↔ dettaglio (con #hash condivisibile)
+  animations.js        → intro + grafico "di crescita" animato in loop
+  init.js               → avvio: carica data.json, poi disegna la pagina
 ```
 
 ## Come personalizzarlo
 
-Apri **`js/data.js`** e modifica:
+Apri **`data.json`** con un editor di testo qualsiasi (anche il Blocco
+Note) e modifica:
 
-1. `SITE_CONFIG` → nome, ruolo, monogramma (iniziali) e testo della hero.
-2. `AREAS` → le 4 categorie mostrate in home (Strumenti di Lavoro, Mercati &
+1. `siteConfig` → nome, ruolo, monogramma (iniziali) e testo della hero.
+2. `areas` → le categorie mostrate in home (Strumenti di Lavoro, Mercati &
    Ricerca, Produttività, Normativa & Formazione). Puoi aggiungere,
    rimuovere o rinominare aree e singoli link: ogni link ha `label`, `desc`,
-   `url` e un'`icon` (i nomi disponibili sono in `js/icons.js`).
+   `url` e un'`icon` (i nomi delle icone disponibili sono elencati in
+   `js/icons.js`).
 
-Sostituisci gli url segnaposto `#` con gli indirizzi reali dei tuoi
+Sostituisci gli url segnaposto `"#"` con gli indirizzi reali dei tuoi
 strumenti (CRM, gestionale, portale della casa mandante, webmail, drive...).
 
-Il `<title>` e il favicon si trovano nell'`<head>` di `index.html`.
+⚠️ **Attenzione alla sintassi JSON**: ogni voce va tra virgolette doppie
+`"così"`, e non deve esserci una virgola dopo l'ultimo elemento di una
+lista/oggetto. Se sbagli qualcosa, la pagina mostrerà un errore invece dei
+tuoi link — in quel caso controlla di non aver lasciato virgole in più o
+virgolette dimenticate. Puoi anche incollare il contenuto su
+[jsonlint.com](https://jsonlint.com) per farlo controllare automaticamente.
 
-## Come usarla in locale (consigliato per uso solo personale)
+## Come usarla — serve un piccolo server locale
 
-Il modo più semplice e più privato: apri direttamente `index.html` con
-doppio click nel browser. Nessun server, nessuna pubblicazione online,
-resta solo sul tuo computer.
+Da quando i contenuti sono in `data.json`, la pagina li legge con una
+richiesta (`fetch`) che i browser bloccano se apri `index.html` con un
+semplice doppio click (protocollo `file://`): è una misura di sicurezza
+standard, non un difetto del sito. Se capita, la pagina stessa mostra un
+messaggio con la soluzione. In pratica:
 
-Se preferisci un piccolo server locale (utile per evitare limitazioni del
-browser sui moduli):
+1. Apri un terminale nella cartella del progetto
+2. Esegui: `python3 -m http.server 8000`
+3. Apri `http://localhost:8000` nel browser
 
-```bash
-python3 -m http.server 8000
-# poi apri http://localhost:8000
-```
+Da quel momento puoi anche salvare l'indirizzo nei preferiti: finché il
+terminale resta aperto, la pagina resta raggiungibile in locale.
 
-## Se invece vuoi accedervi anche da telefono/altri dispositivi
-
-Puoi salvarla su un tuo cloud privato (es. una cartella su Google
-Drive/iCloud sincronizzata) e aprirla da lì, oppure pubblicarla su un
-hosting con protezione tramite password (molti hosting gratuiti come
-Netlify offrono la protezione con password anche nel piano free). Evita di
-pubblicarla su un dominio pubblico senza protezione, perché — come qualsiasi
-pagina web pubblica — sarebbe comunque raggiungibile da chiunque ne
-conoscesse l'indirizzo.
+### Alternative comode
+- **VS Code**: installa l'estensione "Live Server" e fai clic destro su
+  `index.html` → "Open with Live Server". Nessun comando da digitare.
+- **Uso da più dispositivi**: pubblica la cartella su un hosting con
+  protezione tramite password (es. Netlify, anche nel piano gratuito) così
+  puoi aprirla da telefono o da un altro computer restando privata. Evita
+  di pubblicarla su un dominio pubblico senza protezione, perché — come
+  qualsiasi pagina web pubblica — sarebbe comunque raggiungibile da
+  chiunque ne conoscesse l'indirizzo.
 
 ## Note tecniche
 

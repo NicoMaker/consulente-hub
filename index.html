@@ -117,6 +117,27 @@
   <div class="link-list" id="linkList"></div>
 </section>
 
+<!-- ══ ERRORE CARICAMENTO DATI (mostrato solo se data.json non si carica) ══ -->
+<div id="dataError" class="data-error">
+  <div class="data-error-card">
+    <div class="data-error-icon">⚠</div>
+    <h2>Impossibile caricare i dati</h2>
+    <p>
+      Il browser ha bloccato la lettura di <code>data.json</code>. Succede
+      quando la pagina viene aperta direttamente come file locale
+      (<code>file://</code>) invece che da un server: per motivi di
+      sicurezza, i browser impediscono a una pagina aperta così di leggere
+      altri file sul disco.
+    </p>
+    <p><strong>Soluzione — avvia un piccolo server locale:</strong></p>
+    <ol>
+      <li>Apri un terminale nella cartella del progetto</li>
+      <li>Esegui: <code>python3 -m http.server 8000</code></li>
+      <li>Apri <code>http://localhost:8000</code> nel browser</li>
+    </ol>
+  </div>
+</div>
+
 <!-- ══ SCRIPTS ══ -->
 <script src="js/icons.js"></script>
 <script src="js/data.js"></script>

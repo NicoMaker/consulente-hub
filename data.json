@@ -1,0 +1,147 @@
+{
+  "siteConfig": {
+    "name": "Marco Ferrari",
+    "role": "Consulente Finanziario",
+    "monogram": "MF",
+    "heroEyebrow": "Uso personale — non pubblico",
+    "heroTitleBefore": "I miei ",
+    "heroTitleEmphasis": "strumenti di lavoro",
+    "heroTitleAfter": " in un posto solo",
+    "heroSub": "Bacheca privata di collegamenti rapidi: CRM, mercati, produttività e normativa. Solo per te.",
+    "sectionLabel": "I miei link"
+  },
+  "areas": [
+    {
+      "id": "strumenti",
+      "label": "Strumenti di Lavoro",
+      "icon": "briefcase",
+      "accent": "gold",
+      "description": "Gli accessi che usi tutti i giorni",
+      "links": [
+        {
+          "label": "CRM",
+          "desc": "Anagrafica clienti e pratiche in corso",
+          "url": "#",
+          "icon": "briefcase"
+        },
+        {
+          "label": "Gestionale Consulenza",
+          "desc": "Portafogli, proposte e reportistica",
+          "url": "#",
+          "icon": "chart"
+        },
+        {
+          "label": "Firma Digitale",
+          "desc": "Piattaforma per la firma dei documenti",
+          "url": "#",
+          "icon": "shield"
+        },
+        {
+          "label": "Posta Elettronica Certificata",
+          "desc": "Accesso alla webmail PEC",
+          "url": "#",
+          "icon": "mail"
+        }
+      ]
+    },
+    {
+      "id": "mercati",
+      "label": "Mercati & Ricerca",
+      "icon": "trend",
+      "accent": "emerald",
+      "description": "Dati, quotazioni e approfondimenti",
+      "links": [
+        {
+          "label": "Borsa Italiana",
+          "desc": "Quotazioni e notizie di mercato",
+          "url": "#",
+          "icon": "trend"
+        },
+        {
+          "label": "Morningstar",
+          "desc": "Schede fondi e rating",
+          "url": "#",
+          "icon": "chart"
+        },
+        {
+          "label": "Il Sole 24 Ore — Mercati",
+          "desc": "Rassegna stampa finanziaria",
+          "url": "#",
+          "icon": "article"
+        },
+        {
+          "label": "Report macroeconomici",
+          "desc": "Analisi periodiche della casa mandante",
+          "url": "#",
+          "icon": "download"
+        }
+      ]
+    },
+    {
+      "id": "produttivita",
+      "label": "Produttività",
+      "icon": "book",
+      "accent": "gold",
+      "description": "Email, agenda e archivio",
+      "links": [
+        {
+          "label": "Email",
+          "desc": "Casella di posta principale",
+          "url": "#",
+          "icon": "mail"
+        },
+        {
+          "label": "Calendario",
+          "desc": "Appuntamenti e promemoria",
+          "url": "#",
+          "icon": "calendar"
+        },
+        {
+          "label": "Drive / Cloud",
+          "desc": "Documenti e archivio pratiche",
+          "url": "#",
+          "icon": "download"
+        },
+        {
+          "label": "Note",
+          "desc": "Appunti rapidi e checklist",
+          "url": "#",
+          "icon": "article"
+        }
+      ]
+    },
+    {
+      "id": "normativa",
+      "label": "Normativa & Formazione",
+      "icon": "shield",
+      "accent": "emerald",
+      "description": "Albo, vigilanza e aggiornamento",
+      "links": [
+        {
+          "label": "Albo Unico OCF",
+          "desc": "Organismo di vigilanza dei consulenti finanziari",
+          "url": "https://www.organismocf.it",
+          "icon": "shield"
+        },
+        {
+          "label": "CONSOB",
+          "desc": "Comunicazioni e normativa",
+          "url": "https://www.consob.it",
+          "icon": "book"
+        },
+        {
+          "label": "Formazione ECF",
+          "desc": "Corsi per i crediti formativi annuali",
+          "url": "#",
+          "icon": "help"
+        },
+        {
+          "label": "Documentazione interna",
+          "desc": "Procedure e modulistica della casa mandante",
+          "url": "#",
+          "icon": "article"
+        }
+      ]
+    }
+  ]
+}
