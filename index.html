@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="color-scheme" content="dark" />
+<title>Marco Ferrari — Consulente Finanziario | Hub</title>
+<meta name="description" content="Tutti i contatti, i servizi e le risorse in un unico posto." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+  rel="stylesheet"
+/>
+
+<link rel="stylesheet" href="css/styles.css" />
+<link rel="stylesheet" href="css/animations.css" />
+
+<link
+  rel="icon"
+  href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%230b1220'/%3E%3Cpath d='M4 16l5-5 3 3 7-8' stroke='%23c9a227' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
+/>
+</head>
+<body>
+
+<div class="ledger-grid" aria-hidden="true"></div>
+
+<!-- ══ INTRO SPLASH ══ -->
+<div class="intro-splash" id="introSplash" aria-hidden="true">
+  <div class="intro-mark" data-monogram>MF</div>
+  <div class="intro-rule"></div>
+  <div class="intro-label">Consulenza finanziaria indipendente</div>
+</div>
+
+<!-- ══ HEADER ══ -->
+<header class="hub-header">
+  <div class="header-inner">
+    <div class="identity">
+      <div class="monogram" data-monogram>MF</div>
+      <div class="identity-text">
+        <div class="identity-name" data-name>Marco Ferrari</div>
+        <div class="identity-role" data-role>Consulente Finanziario</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="area-tag" id="areaTag">
+        <span class="area-tag-dot" id="areaTagDot"></span>
+        <span id="areaTagName"></span>
+      </div>
+      <button class="back-btn" id="backBtn" type="button">
+        <span aria-hidden="true">←</span>
+        <span>Indietro</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ══ HOME ══ -->
+<main id="screenHome" class="page">
+  <section class="hero" id="hero">
+    <svg class="hero-chart" viewBox="0 0 700 220" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="chartGradient" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#c9a227" />
+          <stop offset="100%" stop-color="#45a68f" />
+        </linearGradient>
+        <linearGradient id="chartFillGradient" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#c9a227" stop-opacity="0.25" />
+          <stop offset="100%" stop-color="#c9a227" stop-opacity="0" />
+        </linearGradient>
+      </defs>
+      <g class="chart-grid">
+        <line x1="0" y1="50" x2="700" y2="50" />
+        <line x1="0" y1="100" x2="700" y2="100" />
+        <line x1="0" y1="150" x2="700" y2="150" />
+        <line x1="0" y1="200" x2="700" y2="200" />
+      </g>
+      <path
+        class="chart-path-fill"
+        id="chartPathFill"
+        d="M0,170 C40,160 60,140 90,150 C120,160 140,190 160,175 C185,158 200,110 230,120 C260,130 275,155 300,140 C330,120 350,85 380,90 C405,94 430,125 460,110 C490,95 510,55 540,60 C565,64 585,90 620,75 C645,64 665,45 700,35 L700,220 L0,220 Z"
+      />
+      <path
+        class="chart-path"
+        id="chartPath"
+        d="M0,170 C40,160 60,140 90,150 C120,160 140,190 160,175 C185,158 200,110 230,120 C260,130 275,155 300,140 C330,120 350,85 380,90 C405,94 430,125 460,110 C490,95 510,55 540,60 C565,64 585,90 620,75 C645,64 665,45 700,35"
+      />
+      <circle class="chart-marker" id="chartMarker" cx="0" cy="170" r="4.5" />
+    </svg>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="eyebrow hero-eyebrow-text">Hub personale</span>
+      </div>
+      <h1 class="hero-title">Pianifichiamo insieme il tuo <em>domani finanziario</em></h1>
+      <p class="hero-sub">Consulenza indipendente su investimenti, previdenza e protezione del patrimonio.</p>
+      <a class="cta-btn" href="#" id="ctaBtn">
+        <span class="cta-label">Prenota una consulenza gratuita</span>
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+  <div class="section-label">
+    <span class="eyebrow" id="sectionLabelText">Esplora</span>
+  </div>
+  <div class="area-grid" id="areaGrid"></div>
+</main>
+
+<!-- ══ DETAIL ══ -->
+<section id="screenDetail" class="page">
+  <div class="detail-head">
+    <h2 class="detail-title" id="detailTitle"></h2>
+    <p class="detail-desc" id="detailDesc"></p>
+  </div>
+  <div class="link-list" id="linkList"></div>
+</section>
+
+<!-- ══ SCRIPTS ══ -->
+<script src="js/icons.js"></script>
+<script src="js/data.js"></script>
+<script src="js/render.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/init.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+/* ==========================================================================
+   TRANSIZIONI PAGINA
+   ========================================================================== */
+
+.page {
+  display: none;
+}
+
+.page.is-active {
+  display: block;
+  animation: page-in 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ==========================================================================
+   AMBIENT GROWTH-LINE (elemento firma)
+   Un tracciato disegnato lentamente in loop, come un grafico che cresce.
+   ========================================================================== */
+
+.chart-path {
+  fill: none;
+  stroke: url(#chartGradient);
+  stroke-width: 2;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 8px rgba(201, 162, 39, 0.25));
+}
+
+.chart-path-fill {
+  fill: url(#chartFillGradient);
+  opacity: 0.5;
+}
+
+.chart-marker {
+  fill: var(--gold-bright);
+  filter: drop-shadow(0 0 6px rgba(232, 200, 92, 0.7));
+}
+
+.chart-grid line {
+  stroke: rgba(154, 167, 189, 0.08);
+  stroke-width: 1;
+}
+
+/* ==========================================================================
+   RIDUZIONE MOVIMENTO
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .intro-splash {
+    display: none !important;
+  }
+}
