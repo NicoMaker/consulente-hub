@@ -2,7 +2,9 @@
    ANIMATIONS — intro splash + growth-line ambientale (elemento firma)
    ========================================================================== */
 
-const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const prefersReducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)",
+).matches;
 
 function runIntro(onDone) {
   const splash = document.getElementById("introSplash");

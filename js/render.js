@@ -16,7 +16,8 @@ function renderIdentity() {
 
 function renderHome() {
   const hero = document.getElementById("hero");
-  hero.querySelector(".hero-eyebrow-text").textContent = SITE_CONFIG.heroEyebrow;
+  hero.querySelector(".hero-eyebrow-text").textContent =
+    SITE_CONFIG.heroEyebrow;
   hero.querySelector(".hero-title").innerHTML =
     escapeHtml(SITE_CONFIG.heroTitleBefore) +
     "<em>" +
@@ -25,7 +26,8 @@ function renderHome() {
     escapeHtml(SITE_CONFIG.heroTitleAfter);
   hero.querySelector(".hero-sub").textContent = SITE_CONFIG.heroSub;
 
-  document.getElementById("sectionLabelText").textContent = SITE_CONFIG.sectionLabel;
+  document.getElementById("sectionLabelText").textContent =
+    SITE_CONFIG.sectionLabel;
 
   const grid = document.getElementById("areaGrid");
   grid.innerHTML = AREAS.map(
@@ -41,7 +43,7 @@ function renderHome() {
         ${icon("arrowRight")}
       </div>
     </button>
-  `
+  `,
   ).join("");
 
   grid.querySelectorAll(".area-card").forEach((card) => {

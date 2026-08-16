@@ -32,7 +32,11 @@ function goHome(pushHash = true) {
   document.getElementById("areaTag").style.display = "none";
 
   if (pushHash) {
-    history.pushState({}, "", window.location.pathname + window.location.search);
+    history.pushState(
+      {},
+      "",
+      window.location.pathname + window.location.search,
+    );
   }
 
   window.scrollTo({ top: 0, behavior: "auto" });

@@ -29,7 +29,8 @@
 
   /* tipografia */
   --font-display: "Fraunces", "Iowan Old Style", serif;
-  --font-body: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body:
+    "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
   /* misure */
@@ -71,7 +72,11 @@ body {
     linear-gradient(rgba(201, 162, 39, 0.045) 1px, transparent 1px),
     linear-gradient(90deg, rgba(201, 162, 39, 0.045) 1px, transparent 1px);
   background-size: 42px 42px;
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 90%);
+  mask-image: radial-gradient(
+    ellipse 80% 60% at 50% 0%,
+    #000 40%,
+    transparent 90%
+  );
 }
 
 a {
@@ -139,7 +144,12 @@ button {
 .intro-rule {
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--gold-bright), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gold-bright),
+    transparent
+  );
   transition: width 0.9s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -281,7 +291,10 @@ button {
   padding: 9px 14px;
   border-radius: 999px;
   border: 1px solid var(--border);
-  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease;
 }
 
 .back-btn:hover,
@@ -377,7 +390,11 @@ button {
 
 .hero-title em {
   font-style: italic;
-  background: linear-gradient(100deg, var(--gold-bright), var(--emerald-bright));
+  background: linear-gradient(
+    100deg,
+    var(--gold-bright),
+    var(--emerald-bright)
+  );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -402,7 +419,9 @@ button {
   color: var(--bg);
   background: linear-gradient(120deg, var(--gold-bright), var(--gold));
   box-shadow: var(--shadow-lift);
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+  transition:
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.25s ease;
 }
 
 .cta-btn:hover,
@@ -455,7 +474,10 @@ button {
   opacity: 0;
   transform: translateY(14px);
   animation: card-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .area-card:hover,
@@ -559,7 +581,10 @@ button {
   opacity: 0;
   transform: translateY(10px);
   animation: card-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
 .link-card:hover,
@@ -612,7 +637,10 @@ button {
   justify-content: center;
   color: var(--ink-faint);
   border: 1px solid var(--border);
-  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .link-go svg {
