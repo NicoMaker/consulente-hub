@@ -25,14 +25,6 @@ function renderHome() {
     escapeHtml(SITE_CONFIG.heroTitleAfter);
   hero.querySelector(".hero-sub").textContent = SITE_CONFIG.heroSub;
 
-  const cta = hero.querySelector(".cta-btn");
-  cta.href = SITE_CONFIG.ctaUrl;
-  cta.querySelector(".cta-label").textContent = SITE_CONFIG.ctaLabel;
-  if (/^https?:\/\//.test(SITE_CONFIG.ctaUrl)) {
-    cta.target = "_blank";
-    cta.rel = "noopener noreferrer";
-  }
-
   document.getElementById("sectionLabelText").textContent = SITE_CONFIG.sectionLabel;
 
   const grid = document.getElementById("areaGrid");

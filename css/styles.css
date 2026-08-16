@@ -248,6 +248,28 @@ button {
   flex: none;
 }
 
+.private-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  padding: 8px 13px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.private-badge svg {
+  width: 12px;
+  height: 12px;
+  flex: none;
+  color: var(--gold-bright);
+}
+
 .back-btn {
   display: none;
   align-items: center;
@@ -623,7 +645,13 @@ button {
     padding: 0 16px 72px;
   }
   .identity-name {
-    max-width: 46vw;
+    max-width: 40vw;
+  }
+  .private-badge-text {
+    display: none;
+  }
+  .private-badge {
+    padding: 8px;
   }
   .hero {
     padding: 56px 0 36px;

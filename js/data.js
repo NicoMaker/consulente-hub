@@ -1,156 +1,144 @@
 /* ==========================================================================
    DATA — PERSONALIZZA QUI
-   Questo è l'unico file da modificare per adattare l'hub al tuo profilo:
-   nome, monogramma, testi della hero e tutte le aree con i relativi link.
+   Bacheca AD USO PERSONALE: raccoglie i link che usi tu ogni giorno per
+   lavorare (CRM, portali, mercati, produttività...). Non è una pagina
+   pubblica e non contiene contenuti pensati per i clienti.
    ========================================================================== */
 
 const SITE_CONFIG = {
   name: "Marco Ferrari",
-  role: "Consulente Finanziario Indipendente",
+  role: "Consulente Finanziario",
   monogram: "MF",
 
-  heroEyebrow: "Hub personale",
-  heroTitleBefore: "Pianifichiamo insieme il tuo ",
-  heroTitleEmphasis: "domani finanziario",
-  heroTitleAfter: "",
+  heroEyebrow: "Uso personale — non pubblico",
+  heroTitleBefore: "I miei ",
+  heroTitleEmphasis: "strumenti di lavoro",
+  heroTitleAfter: " in un posto solo",
   heroSub:
-    "Consulenza indipendente su investimenti, previdenza e protezione del patrimonio. Scegli qui sotto come contattarmi o cosa vuoi approfondire.",
+    "Bacheca privata di collegamenti rapidi: CRM, mercati, produttività e normativa. Solo per te.",
 
-  ctaLabel: "Prenota una consulenza gratuita",
-  ctaUrl: "https://calendly.com/tuo-link", // sostituisci con il tuo link di prenotazione
-
-  sectionLabel: "Esplora",
+  sectionLabel: "I miei link",
 };
 
 /* Ogni area diventa una card in home. Cliccandola si apre l'elenco di link.
-   accent: "gold" oppure "emerald" — alterna i due per dare ritmo alla griglia. */
+   accent: "gold" oppure "emerald" — alterna i due per dare ritmo alla griglia.
+   Sostituisci gli url segnaposto "#" con gli indirizzi reali dei tuoi
+   strumenti (CRM, gestionale, portali, ecc.). */
 const AREAS = [
   {
-    id: "contatti",
-    label: "Contatti Diretti",
-    icon: "phone",
-    accent: "gold",
-    description: "Scegli il canale più comodo per parlare con me",
-    links: [
-      {
-        label: "Chiama ora",
-        desc: "Dal lunedì al venerdì, 9:00–18:00",
-        url: "tel:+390000000000",
-        icon: "phone",
-      },
-      {
-        label: "Scrivi su WhatsApp",
-        desc: "Risposta entro 24 ore lavorative",
-        url: "https://wa.me/390000000000",
-        icon: "whatsapp",
-      },
-      {
-        label: "Invia una email",
-        desc: "Per richieste dettagliate o documenti",
-        url: "mailto:info@tuodominio.it",
-        icon: "mail",
-      },
-      {
-        label: "Prenota un appuntamento",
-        desc: "Scegli data e ora sul calendario online",
-        url: "https://calendly.com/tuo-link",
-        icon: "calendar",
-      },
-    ],
-  },
-  {
-    id: "servizi",
-    label: "Consulenza & Servizi",
+    id: "strumenti",
+    label: "Strumenti di Lavoro",
     icon: "briefcase",
-    accent: "emerald",
-    description: "Le aree in cui posso affiancarti",
+    accent: "gold",
+    description: "Gli accessi che usi tutti i giorni",
     links: [
       {
-        label: "Pianificazione Finanziaria",
-        desc: "Un percorso su misura per i tuoi obiettivi",
+        label: "CRM",
+        desc: "Anagrafica clienti e pratiche in corso",
+        url: "#",
+        icon: "briefcase",
+      },
+      {
+        label: "Gestionale Consulenza",
+        desc: "Portafogli, proposte e reportistica",
         url: "#",
         icon: "chart",
       },
       {
-        label: "Investimenti e Risparmio Gestito",
-        desc: "Strategie coerenti con il tuo profilo di rischio",
-        url: "#",
-        icon: "trend",
-      },
-      {
-        label: "Previdenza Integrativa",
-        desc: "Costruire la pensione che vuoi davvero",
+        label: "Firma Digitale",
+        desc: "Piattaforma per la firma dei documenti",
         url: "#",
         icon: "shield",
       },
       {
-        label: "Protezione del Patrimonio",
-        desc: "Tutelare te e la tua famiglia da imprevisti",
+        label: "Posta Elettronica Certificata",
+        desc: "Accesso alla webmail PEC",
         url: "#",
-        icon: "umbrella",
-      },
-      {
-        label: "Passaggio Generazionale",
-        desc: "Pianificare il futuro del patrimonio familiare",
-        url: "#",
-        icon: "family",
+        icon: "mail",
       },
     ],
   },
   {
-    id: "risorse",
-    label: "Risorse Gratuite",
-    icon: "book",
-    accent: "gold",
-    description: "Materiali utili per iniziare a orientarti",
+    id: "mercati",
+    label: "Mercati & Ricerca",
+    icon: "trend",
+    accent: "emerald",
+    description: "Dati, quotazioni e approfondimenti",
     links: [
       {
-        label: "Guida: le basi degli investimenti",
-        desc: "PDF gratuito, circa 10 minuti di lettura",
+        label: "Borsa Italiana",
+        desc: "Quotazioni e notizie di mercato",
         url: "#",
-        icon: "download",
+        icon: "trend",
       },
       {
-        label: "Newsletter mensile",
-        desc: "Mercati e consigli pratici via email",
+        label: "Morningstar",
+        desc: "Schede fondi e rating",
         url: "#",
-        icon: "mail",
+        icon: "chart",
       },
       {
-        label: "Blog e articoli",
-        desc: "Approfondimenti aggiornati",
+        label: "Il Sole 24 Ore — Mercati",
+        desc: "Rassegna stampa finanziaria",
         url: "#",
         icon: "article",
       },
       {
-        label: "Domande frequenti",
-        desc: "Le risposte alle domande più comuni",
+        label: "Report macroeconomici",
+        desc: "Analisi periodiche della casa mandante",
         url: "#",
-        icon: "help",
+        icon: "download",
       },
     ],
   },
   {
-    id: "social",
-    label: "Presenza Online",
-    icon: "globe",
-    accent: "emerald",
-    description: "Seguimi sui miei canali",
+    id: "produttivita",
+    label: "Produttività",
+    icon: "book",
+    accent: "gold",
+    description: "Email, agenda e archivio",
     links: [
-      { label: "Sito Web", desc: "Tutti i servizi in un unico posto", url: "#", icon: "globe" },
-      { label: "LinkedIn", desc: "Aggiornamenti professionali", url: "#", icon: "linkedin" },
+      { label: "Email", desc: "Casella di posta principale", url: "#", icon: "mail" },
       {
-        label: "Instagram",
-        desc: "Contenuti quotidiani su finanza personale",
+        label: "Calendario",
+        desc: "Appuntamenti e promemoria",
         url: "#",
-        icon: "instagram",
+        icon: "calendar",
       },
-      { label: "Facebook", desc: "Community e aggiornamenti", url: "#", icon: "facebook" },
+      { label: "Drive / Cloud", desc: "Documenti e archivio pratiche", url: "#", icon: "download" },
+      { label: "Note", desc: "Appunti rapidi e checklist", url: "#", icon: "article" },
+    ],
+  },
+  {
+    id: "normativa",
+    label: "Normativa & Formazione",
+    icon: "shield",
+    accent: "emerald",
+    description: "Albo, vigilanza e aggiornamento",
+    links: [
       {
-        label: "YouTube",
-        desc: "Video guide ed episodi settimanali",
+        label: "Albo Unico OCF",
+        desc: "Organismo di vigilanza dei consulenti finanziari",
+        url: "https://www.organismocf.it",
+        icon: "shield",
+      },
+      {
+        label: "CONSOB",
+        desc: "Comunicazioni e normativa",
+        url: "https://www.consob.it",
+        icon: "book",
+      },
+      {
+        label: "Formazione ECF",
+        desc: "Corsi per i crediti formativi annuali",
         url: "#",
-        icon: "youtube",
+        icon: "help",
+      },
+      {
+        label: "Documentazione interna",
+        desc: "Procedure e modulistica della casa mandante",
+        url: "#",
+        icon: "article",
       },
     ],
   },

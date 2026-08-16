@@ -1,9 +1,15 @@
-# Hub di link — Consulente Finanziario
+# Bacheca personale di link — Consulente Finanziario
 
-Sito statico "hub di link" (stile link-in-bio ma con schermata home ad aree +
-dettaglio, ispirato nella struttura al progetto PalminoMotors ma con palette,
-tipografia e contenuti completamente diversi, pensati per un consulente
-finanziario). Nessun footer con dati commerciali/legali, come richiesto.
+Bacheca **ad uso strettamente personale**: raccoglie i link che usi tu ogni
+giorno per lavorare (CRM, portali, mercati, produttività, normativa). Non è
+una pagina pensata per essere mostrata a clienti: niente contatti pubblici,
+niente descrizioni di servizi, niente pulsanti "prenota una consulenza". In
+testata compare un'etichetta "Privato" a ricordarlo.
+
+Se in futuro la ospiti online, ricordati che qualunque pagina pubblicata su
+un dominio pubblico è comunque raggiungibile da chi conosce l'indirizzo:
+per tenerla davvero privata usa un hosting con protezione tramite password,
+oppure tienila solo in locale sul tuo computer (vedi sotto).
 
 ## Struttura del progetto
 
@@ -25,46 +31,46 @@ js/
 
 Apri **`js/data.js`** e modifica:
 
-1. `SITE_CONFIG` → nome, ruolo, monogramma (iniziali), testo della hero e
-   URL del pulsante "Prenota una consulenza" (es. link Calendly/Google
-   Calendar).
-2. `AREAS` → le 4 categorie mostrate in home (Contatti, Servizi, Risorse,
-   Presenza Online). Puoi aggiungere/rimuovere aree o singoli link: ogni
-   link ha `label`, `desc`, `url` e un'`icon` (vedi i nomi disponibili in
-   `js/icons.js`).
+1. `SITE_CONFIG` → nome, ruolo, monogramma (iniziali) e testo della hero.
+2. `AREAS` → le 4 categorie mostrate in home (Strumenti di Lavoro, Mercati &
+   Ricerca, Produttività, Normativa & Formazione). Puoi aggiungere,
+   rimuovere o rinominare aree e singoli link: ogni link ha `label`, `desc`,
+   `url` e un'`icon` (i nomi disponibili sono in `js/icons.js`).
 
-Ricorda di sostituire:
-- `tel:+390000000000` → il tuo numero di telefono
-- `https://wa.me/390000000000` → il tuo numero WhatsApp (senza `+` né spazi)
-- `mailto:info@tuodominio.it` → la tua email
-- i link social/segnaposto `#` → i tuoi profili reali
+Sostituisci gli url segnaposto `#` con gli indirizzi reali dei tuoi
+strumenti (CRM, gestionale, portale della casa mandante, webmail, drive...).
 
 Il `<title>` e il favicon si trovano nell'`<head>` di `index.html`.
 
-## Come vederlo in locale
+## Come usarla in locale (consigliato per uso solo personale)
 
-Basta aprire `index.html` nel browser. Se preferisci un piccolo server
-locale (utile per evitare limitazioni del browser sui moduli):
+Il modo più semplice e più privato: apri direttamente `index.html` con
+doppio click nel browser. Nessun server, nessuna pubblicazione online,
+resta solo sul tuo computer.
+
+Se preferisci un piccolo server locale (utile per evitare limitazioni del
+browser sui moduli):
 
 ```bash
 python3 -m http.server 8000
 # poi apri http://localhost:8000
 ```
 
-## Come pubblicarlo gratis (GitHub Pages)
+## Se invece vuoi accedervi anche da telefono/altri dispositivi
 
-1. Crea un nuovo repository su GitHub e carica questi file.
-2. Vai in **Settings → Pages**, scegli il branch `main` e cartella `/root`.
-3. Il sito sarà online su `https://<tuo-utente>.github.io/<nome-repo>/`.
-
-In alternativa puoi trascinare la cartella su Netlify o Vercel per una
-pubblicazione altrettanto rapida.
+Puoi salvarla su un tuo cloud privato (es. una cartella su Google
+Drive/iCloud sincronizzata) e aprirla da lì, oppure pubblicarla su un
+hosting con protezione tramite password (molti hosting gratuiti come
+Netlify offrono la protezione con password anche nel piano free). Evita di
+pubblicarla su un dominio pubblico senza protezione, perché — come qualsiasi
+pagina web pubblica — sarebbe comunque raggiungibile da chiunque ne
+conoscesse l'indirizzo.
 
 ## Note tecniche
 
 - Nessuna dipendenza esterna a parte i font Google (Fraunces, Manrope,
   JetBrains Mono), caricati via `<link>` in `index.html`.
-- Routing leggero via `#hash` (es. `#servizi`) per link diretti e
-  condivisibili a una singola area.
-- Rispetta `prefers-reduced-motion`: se l'utente ha disattivato le
-  animazioni nel sistema, l'intro e il grafico animato vengono disattivati.
+- Routing leggero via `#hash` (es. `#normativa`) per link diretti a una
+  singola area.
+- Rispetta `prefers-reduced-motion`: se hai disattivato le animazioni nel
+  sistema, l'intro e il grafico animato vengono disattivati.
