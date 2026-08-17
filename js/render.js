@@ -3,9 +3,18 @@
    ========================================================================== */
 
 function renderIdentity() {
-  document
-    .querySelectorAll("[data-monogram]")
-    .forEach((el) => (el.textContent = SITE_CONFIG.monogram));
+  // Se in data.json è impostato un "logo" (percorso o URL immagine), viene
+  // mostrato al posto delle iniziali testuali, sia nello splash iniziale
+  // che nell'intestazione.
+  const hasLogo = Boolean(SITE_CONFIG.logo);
+  document.querySelectorAll("[data-monogram]").forEach((el) => {
+    el.classList.toggle("has-logo", hasLogo);
+    if (hasLogo) {
+      el.innerHTML = `<img src="${escapeAttr(SITE_CONFIG.logo)}" alt="${escapeAttr(SITE_CONFIG.name)}" />`;
+    } else {
+      el.textContent = SITE_CONFIG.monogram;
+    }
+  });
   document
     .querySelectorAll("[data-name]")
     .forEach((el) => (el.textContent = SITE_CONFIG.name));
@@ -38,8 +47,8 @@ function renderHome() {
         <div class="area-card-desc">${escapeHtml(area.description)}</div>
       </div>
       <div class="area-card-count">
-        <span>${area.links.length} link</span>
-        ${icon("arrowRight")}
+        <span class="area-card-count-text">${area.links.length} link</span>
+        <span class="area-card-go">${icon("arrowRight")}</span>
       </div>
     </button>
   `,

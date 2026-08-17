@@ -1,14 +1,15 @@
 {
   "siteConfig": {
-    "name": "Marco Ferrari",
+    "name": "Andrea Marano",
     "role": "Consulente Finanziario",
-    "monogram": "MF",
+    "monogram": "AM",
+    "logo": "",
     "heroEyebrow": "Uso personale — non pubblico",
     "heroTitleBefore": "I miei ",
     "heroTitleEmphasis": "strumenti di lavoro",
     "heroTitleAfter": " in un posto solo",
     "heroSub": "Bacheca privata di collegamenti rapidi: CRM, mercati, produttività e normativa. Solo per te.",
-    "sectionLabel": "I miei link"
+    "sectionLabel": "Le mie categorie"
   },
   "areas": [
     {
