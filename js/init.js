@@ -40,7 +40,7 @@ function loadPreferences() {
     document.getElementById("themeToggleIcon").textContent = "🌙";
   }
 
-  // Vista home (aree)
+  // Vista HOME (aree) — chiave separata
   const homeView = localStorage.getItem("consulente-hub-home-view") || "grid";
   const areaGrid = document.getElementById("areaGrid");
   if (areaGrid) {
@@ -55,7 +55,7 @@ function loadPreferences() {
     }
   }
 
-  // Vista dettaglio (link)
+  // Vista DETAIL (link) — chiave separata
   const detailView = localStorage.getItem("consulente-hub-detail-view") || "list";
   const linkList = document.getElementById("linkList");
   if (linkList) {
@@ -71,7 +71,6 @@ function loadPreferences() {
   }
 }
 
-// Imposta il tema
 function setTheme(theme) {
   const icon = document.getElementById("themeToggleIcon");
   if (theme === "light") {

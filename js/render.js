@@ -3,35 +3,23 @@
    ========================================================================== */
 
 function renderIdentity() {
-  document.querySelectorAll("[data-monogram]").forEach((el) => {
-    el.textContent = SITE_CONFIG.monogram;
-  });
-  document.querySelectorAll("[data-name]").forEach((el) => {
-    el.textContent = SITE_CONFIG.name;
-  });
-  document.querySelectorAll("[data-role]").forEach((el) => {
-    el.textContent = SITE_CONFIG.role;
-  });
+  document.querySelectorAll("[data-monogram]").forEach(el => el.textContent = SITE_CONFIG.monogram);
+  document.querySelectorAll("[data-name]").forEach(el => el.textContent = SITE_CONFIG.name);
+  document.querySelectorAll("[data-role]").forEach(el => el.textContent = SITE_CONFIG.role);
 }
 
 function renderHome() {
   const hero = document.getElementById("hero");
-  hero.querySelector(".hero-eyebrow-text").textContent =
-    SITE_CONFIG.heroEyebrow;
+  hero.querySelector(".hero-eyebrow-text").textContent = SITE_CONFIG.heroEyebrow;
   hero.querySelector(".hero-title").innerHTML =
     escapeHtml(SITE_CONFIG.heroTitleBefore) +
-    "<em>" +
-    escapeHtml(SITE_CONFIG.heroTitleEmphasis) +
-    "</em>" +
+    "<em>" + escapeHtml(SITE_CONFIG.heroTitleEmphasis) + "</em>" +
     escapeHtml(SITE_CONFIG.heroTitleAfter);
   hero.querySelector(".hero-sub").textContent = SITE_CONFIG.heroSub;
-
-  document.getElementById("sectionLabelText").textContent =
-    SITE_CONFIG.sectionLabel;
+  document.getElementById("sectionLabelText").textContent = SITE_CONFIG.sectionLabel;
 
   const grid = document.getElementById("areaGrid");
-  grid.innerHTML = AREAS.map(
-    (area, i) => `
+  grid.innerHTML = AREAS.map((area, i) => `
     <button class="area-card accent-${area.accent}" data-area="${area.id}" style="animation-delay:${i * 70}ms">
       <div class="area-icon">${icon(area.icon)}</div>
       <div>
@@ -43,14 +31,13 @@ function renderHome() {
         ${icon("arrowRight")}
       </div>
     </button>
-  `,
-  ).join("");
+  `).join("");
 
-  grid.querySelectorAll(".area-card").forEach((card) => {
+  grid.querySelectorAll(".area-card").forEach(card => {
     card.addEventListener("click", () => goToArea(card.dataset.area));
   });
 
-  // Ripristina la vista home salvata
+  // Ripristina vista home salvata
   const savedView = localStorage.getItem("consulente-hub-home-view") || "grid";
   if (savedView === "list") {
     grid.classList.add("list-view");
@@ -64,26 +51,19 @@ function renderHome() {
 }
 
 function renderDetail(areaId) {
-  const area = AREAS.find((a) => a.id === areaId);
+  const area = AREAS.find(a => a.id === areaId);
   if (!area) return goHome();
-
   document.getElementById("detailTitle").textContent = area.label;
   document.getElementById("detailDesc").textContent = area.description;
-
   const areaTagName = document.getElementById("areaTagName");
   if (areaTagName) areaTagName.textContent = area.label;
 
   const list = document.getElementById("linkList");
-  list.innerHTML = area.links
-    .map((link, i) => {
-      const external = /^https?:\/\//.test(link.url);
-      return `
-      <a
-        class="link-card"
-        href="${escapeAttr(link.url)}"
-        style="animation-delay:${i * 55}ms"
-        ${external ? 'target="_blank" rel="noopener noreferrer"' : ""}
-      >
+  list.innerHTML = area.links.map((link, i) => {
+    const external = /^https?:\/\//.test(link.url);
+    return `
+      <a class="link-card" href="${escapeAttr(link.url)}" style="animation-delay:${i * 55}ms"
+         ${external ? 'target="_blank" rel="noopener noreferrer"' : ""}>
         <div class="link-icon">${icon(link.icon)}</div>
         <div class="link-body">
           <div class="link-title">${escapeHtml(link.label)}</div>
@@ -92,10 +72,9 @@ function renderDetail(areaId) {
         <div class="link-go">${icon("externalLink")}</div>
       </a>
     `;
-    })
-    .join("");
+  }).join("");
 
-  // Ripristina la vista dettaglio salvata
+  // Ripristina vista dettaglio salvata
   const savedView = localStorage.getItem("consulente-hub-detail-view") || "list";
   if (savedView === "grid") {
     list.classList.add("grid-view");
@@ -113,7 +92,6 @@ function escapeHtml(str) {
   div.textContent = str == null ? "" : String(str);
   return div.innerHTML;
 }
-
 function escapeAttr(str) {
   return escapeHtml(str).replace(/"/g, "&quot;");
 }

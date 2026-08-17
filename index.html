@@ -28,14 +28,14 @@
   <body>
     <div class="ledger-grid" aria-hidden="true"></div>
 
-    <!-- ══ INTRO SPLASH ══ -->
+    <!-- INTRO SPLASH -->
     <div class="intro-splash" id="introSplash" aria-hidden="true">
       <div class="intro-mark" data-monogram>MF</div>
       <div class="intro-rule"></div>
       <div class="intro-label">Bacheca privata</div>
     </div>
 
-    <!-- ══ HEADER ══ -->
+    <!-- HEADER -->
     <header class="hub-header">
       <div class="header-inner">
         <div class="identity">
@@ -50,14 +50,7 @@
             <span class="theme-toggle-icon" id="themeToggleIcon">🌙</span>
           </button>
           <div class="private-badge">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <rect x="3" y="11" width="18" height="11" rx="2" />
               <path d="M7 11V7a5 5 0 0 1 10 0v4" />
             </svg>
@@ -75,15 +68,10 @@
       </div>
     </header>
 
-    <!-- ══ HOME ══ -->
+    <!-- HOME -->
     <main id="screenHome" class="page">
       <section class="hero" id="hero">
-        <svg
-          class="hero-chart"
-          viewBox="0 0 700 220"
-          preserveAspectRatio="none"
-          aria-hidden="true"
-        >
+        <svg class="hero-chart" viewBox="0 0 700 220" preserveAspectRatio="none" aria-hidden="true">
           <defs>
             <linearGradient id="chartGradient" x1="0" y1="0" x2="1" y2="0">
               <stop offset="0%" stop-color="#c9a227" />
@@ -100,23 +88,9 @@
             <line x1="0" y1="150" x2="700" y2="150" />
             <line x1="0" y1="200" x2="700" y2="200" />
           </g>
-          <path
-            class="chart-path-fill"
-            id="chartPathFill"
-            d="M0,170 C40,160 60,140 90,150 C120,160 140,190 160,175 C185,158 200,110 230,120 C260,130 275,155 300,140 C330,120 350,85 380,90 C405,94 430,125 460,110 C490,95 510,55 540,60 C565,64 585,90 620,75 C645,64 665,45 700,35 L700,220 L0,220 Z"
-          />
-          <path
-            class="chart-path"
-            id="chartPath"
-            d="M0,170 C40,160 60,140 90,150 C120,160 140,190 160,175 C185,158 200,110 230,120 C260,130 275,155 300,140 C330,120 350,85 380,90 C405,94 430,125 460,110 C490,95 510,55 540,60 C565,64 585,90 620,75 C645,64 665,45 700,35"
-          />
-          <circle
-            class="chart-marker"
-            id="chartMarker"
-            cx="0"
-            cy="170"
-            r="4.5"
-          />
+          <path class="chart-path-fill" id="chartPathFill" d="M0,170 C40,160 60,140 90,150 C120,160 140,190 160,175 C185,158 200,110 230,120 C260,130 275,155 300,140 C330,120 350,85 380,90 C405,94 430,125 460,110 C490,95 510,55 540,60 C565,64 585,90 620,75 C645,64 665,45 700,35 L700,220 L0,220 Z" />
+          <path class="chart-path" id="chartPath" d="M0,170 C40,160 60,140 90,150 C120,160 140,190 160,175 C185,158 200,110 230,120 C260,130 275,155 300,140 C330,120 350,85 380,90 C405,94 430,125 460,110 C490,95 510,55 540,60 C565,64 585,90 620,75 C645,64 665,45 700,35" />
+          <circle class="chart-marker" id="chartMarker" cx="0" cy="170" r="4.5" />
         </svg>
 
         <div class="hero-content">
@@ -127,14 +101,14 @@
             Pianifichiamo insieme il tuo <em>domani finanziario</em>
           </h1>
           <p class="hero-sub">
-            Consulenza indipendente su investimenti, previdenza e protezione del
-            patrimonio.
+            Consulenza indipendente su investimenti, previdenza e protezione del patrimonio.
           </p>
         </div>
       </section>
 
       <div class="section-label">
         <span class="eyebrow" id="sectionLabelText">I miei link</span>
+        <!-- Toggle vista per le aree (HOME) -->
         <div class="view-toggle" role="group" aria-label="Visualizzazione aree">
           <button class="view-toggle-btn" data-view="grid" id="homeViewGridBtn" aria-pressed="true" title="Griglia">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
@@ -147,7 +121,7 @@
       <div class="area-grid" id="areaGrid"></div>
     </main>
 
-    <!-- ══ DETAIL ══ -->
+    <!-- DETAIL -->
     <section id="screenDetail" class="page">
       <div class="detail-head">
         <div class="detail-head-left">
@@ -155,6 +129,7 @@
           <p class="detail-desc" id="detailDesc"></p>
         </div>
         <div class="detail-head-right">
+          <!-- Toggle vista per i link (DETAIL) -->
           <div class="view-toggle" role="group" aria-label="Visualizzazione link">
             <button class="view-toggle-btn" data-view="grid" id="detailViewGridBtn" aria-pressed="true" title="Griglia">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
@@ -168,7 +143,7 @@
       <div class="link-list" id="linkList"></div>
     </section>
 
-    <!-- ══ ERRORE CARICAMENTO DATI ══ -->
+    <!-- ERRORE CARICAMENTO DATI -->
     <div id="dataError" class="data-error">
       <div class="data-error-card">
         <div class="data-error-icon">⚠</div>
@@ -189,7 +164,7 @@
       </div>
     </div>
 
-    <!-- ══ SCRIPTS ══ -->
+    <!-- SCRIPTS -->
     <script src="js/icons.js"></script>
     <script src="js/data.js"></script>
     <script src="js/render.js"></script>
