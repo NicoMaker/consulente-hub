@@ -133,4 +133,3 @@ function escapeHtml(str) {
   return div.innerHTML;
 }
 const escapeAttr = (str) => escapeHtml(str).replace(/"/g, "&quot;");
-
