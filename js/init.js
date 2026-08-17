@@ -40,7 +40,7 @@ function loadPreferences() {
     document.getElementById("themeToggleIcon").textContent = "🌙";
   }
 
-  // Vista HOME (aree) — chiave separata
+  // Vista HOME (aree) — chiave separata, default "grid"
   const homeView = localStorage.getItem("consulente-hub-home-view") || "grid";
   const areaGrid = document.getElementById("areaGrid");
   if (areaGrid) {
@@ -55,7 +55,7 @@ function loadPreferences() {
     }
   }
 
-  // Vista DETAIL (link) — chiave separata
+  // Vista DETAIL (link) — chiave separata, default "list"
   const detailView = localStorage.getItem("consulente-hub-detail-view") || "list";
   const linkList = document.getElementById("linkList");
   if (linkList) {

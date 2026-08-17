@@ -37,7 +37,7 @@ function renderHome() {
     card.addEventListener("click", () => goToArea(card.dataset.area));
   });
 
-  // Ripristina vista home salvata
+  // Ripristina vista home salvata (default: griglia)
   const savedView = localStorage.getItem("consulente-hub-home-view") || "grid";
   if (savedView === "list") {
     grid.classList.add("list-view");
@@ -74,7 +74,7 @@ function renderDetail(areaId) {
     `;
   }).join("");
 
-  // Ripristina vista dettaglio salvata
+  // Ripristina vista dettaglio salvata (default: lista)
   const savedView = localStorage.getItem("consulente-hub-detail-view") || "list";
   if (savedView === "grid") {
     list.classList.add("grid-view");
