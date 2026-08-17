@@ -123,6 +123,5 @@ function escapeHtml(str) {
   div.textContent = str == null ? "" : String(str);
   return div.innerHTML;
 }
-function escapeAttr(str) {
-  return escapeHtml(str).replace(/"/g, "&quot;");
-}
+const escapeAttr = (str) => escapeHtml(str).replace(/"/g, "&quot;");
+
