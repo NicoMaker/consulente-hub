@@ -46,27 +46,44 @@ function loadPreferences() {
   if (areaGrid) {
     if (homeView === "list") {
       areaGrid.classList.add("list-view");
-      document.getElementById("homeViewListBtn")?.setAttribute("aria-pressed", "true");
-      document.getElementById("homeViewGridBtn")?.setAttribute("aria-pressed", "false");
+      document
+        .getElementById("homeViewListBtn")
+        ?.setAttribute("aria-pressed", "true");
+      document
+        .getElementById("homeViewGridBtn")
+        ?.setAttribute("aria-pressed", "false");
     } else {
       areaGrid.classList.remove("list-view");
-      document.getElementById("homeViewGridBtn")?.setAttribute("aria-pressed", "true");
-      document.getElementById("homeViewListBtn")?.setAttribute("aria-pressed", "false");
+      document
+        .getElementById("homeViewGridBtn")
+        ?.setAttribute("aria-pressed", "true");
+      document
+        .getElementById("homeViewListBtn")
+        ?.setAttribute("aria-pressed", "false");
     }
   }
 
   // Vista DETAIL (link) — chiave separata, default "list"
-  const detailView = localStorage.getItem("consulente-hub-detail-view") || "list";
+  const detailView =
+    localStorage.getItem("consulente-hub-detail-view") || "list";
   const linkList = document.getElementById("linkList");
   if (linkList) {
     if (detailView === "grid") {
       linkList.classList.add("grid-view");
-      document.getElementById("detailViewGridBtn")?.setAttribute("aria-pressed", "true");
-      document.getElementById("detailViewListBtn")?.setAttribute("aria-pressed", "false");
+      document
+        .getElementById("detailViewGridBtn")
+        ?.setAttribute("aria-pressed", "true");
+      document
+        .getElementById("detailViewListBtn")
+        ?.setAttribute("aria-pressed", "false");
     } else {
       linkList.classList.remove("grid-view");
-      document.getElementById("detailViewListBtn")?.setAttribute("aria-pressed", "true");
-      document.getElementById("detailViewGridBtn")?.setAttribute("aria-pressed", "false");
+      document
+        .getElementById("detailViewListBtn")
+        ?.setAttribute("aria-pressed", "true");
+      document
+        .getElementById("detailViewGridBtn")
+        ?.setAttribute("aria-pressed", "false");
     }
   }
 }
@@ -148,12 +165,20 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 
   // Event listener vista home
-  document.getElementById("homeViewGridBtn").addEventListener("click", () => setHomeView("grid"));
-  document.getElementById("homeViewListBtn").addEventListener("click", () => setHomeView("list"));
+  document
+    .getElementById("homeViewGridBtn")
+    .addEventListener("click", () => setHomeView("grid"));
+  document
+    .getElementById("homeViewListBtn")
+    .addEventListener("click", () => setHomeView("list"));
 
   // Event listener vista dettaglio
-  document.getElementById("detailViewGridBtn").addEventListener("click", () => setDetailView("grid"));
-  document.getElementById("detailViewListBtn").addEventListener("click", () => setDetailView("list"));
+  document
+    .getElementById("detailViewGridBtn")
+    .addEventListener("click", () => setDetailView("grid"));
+  document
+    .getElementById("detailViewListBtn")
+    .addEventListener("click", () => setDetailView("list"));
 
   document.getElementById("backBtn").addEventListener("click", () => goHome());
 
