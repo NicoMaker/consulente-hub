@@ -82,6 +82,18 @@ function renderDetail(areaId) {
     `;
     })
     .join("");
+
+  // Ripristina la vista attuale dopo il rendering
+  const savedView = localStorage.getItem("consulente-hub-view") || "list";
+  if (savedView === "grid") {
+    list.classList.add("grid-view");
+    document.getElementById("viewGridBtn")?.setAttribute("aria-pressed", "true");
+    document.getElementById("viewListBtn")?.setAttribute("aria-pressed", "false");
+  } else {
+    list.classList.remove("grid-view");
+    document.getElementById("viewListBtn")?.setAttribute("aria-pressed", "true");
+    document.getElementById("viewGridBtn")?.setAttribute("aria-pressed", "false");
+  }
 }
 
 function escapeHtml(str) {

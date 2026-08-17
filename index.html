@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="color-scheme" content="dark" />
+    <meta name="color-scheme" content="dark light" />
     <title>Marco Ferrari — Bacheca Personale</title>
     <meta
       name="description"
@@ -46,6 +46,9 @@
           </div>
         </div>
         <div class="header-right">
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambia tema">
+            <span class="theme-toggle-icon" id="themeToggleIcon">🌙</span>
+          </button>
           <div class="private-badge">
             <svg
               viewBox="0 0 24 24"
@@ -139,8 +142,20 @@
     <!-- ══ DETAIL ══ -->
     <section id="screenDetail" class="page">
       <div class="detail-head">
-        <h2 class="detail-title" id="detailTitle"></h2>
-        <p class="detail-desc" id="detailDesc"></p>
+        <div class="detail-head-left">
+          <h2 class="detail-title" id="detailTitle"></h2>
+          <p class="detail-desc" id="detailDesc"></p>
+        </div>
+        <div class="detail-head-right">
+          <div class="view-toggle" role="group" aria-label="Visualizzazione link">
+            <button class="view-toggle-btn" data-view="grid" id="viewGridBtn" aria-pressed="true" title="Griglia">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+            </button>
+            <button class="view-toggle-btn" data-view="list" id="viewListBtn" aria-pressed="false" title="Elenco">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+          </div>
+        </div>
       </div>
       <div class="link-list" id="linkList"></div>
     </section>
