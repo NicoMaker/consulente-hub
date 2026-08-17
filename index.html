@@ -134,7 +134,15 @@
       </section>
 
       <div class="section-label">
-        <span class="eyebrow" id="sectionLabelText">Esplora</span>
+        <span class="eyebrow" id="sectionLabelText">I miei link</span>
+        <div class="view-toggle" role="group" aria-label="Visualizzazione aree">
+          <button class="view-toggle-btn" data-view="grid" id="homeViewGridBtn" aria-pressed="true" title="Griglia">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          </button>
+          <button class="view-toggle-btn" data-view="list" id="homeViewListBtn" aria-pressed="false" title="Elenco">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+        </div>
       </div>
       <div class="area-grid" id="areaGrid"></div>
     </main>
@@ -148,10 +156,10 @@
         </div>
         <div class="detail-head-right">
           <div class="view-toggle" role="group" aria-label="Visualizzazione link">
-            <button class="view-toggle-btn" data-view="grid" id="viewGridBtn" aria-pressed="true" title="Griglia">
+            <button class="view-toggle-btn" data-view="grid" id="detailViewGridBtn" aria-pressed="true" title="Griglia">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
             </button>
-            <button class="view-toggle-btn" data-view="list" id="viewListBtn" aria-pressed="false" title="Elenco">
+            <button class="view-toggle-btn" data-view="list" id="detailViewListBtn" aria-pressed="false" title="Elenco">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
             </button>
           </div>
@@ -160,7 +168,7 @@
       <div class="link-list" id="linkList"></div>
     </section>
 
-    <!-- ══ ERRORE CARICAMENTO DATI (mostrato solo se data.json non si carica) ══ -->
+    <!-- ══ ERRORE CARICAMENTO DATI ══ -->
     <div id="dataError" class="data-error">
       <div class="data-error-card">
         <div class="data-error-icon">⚠</div>

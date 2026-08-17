@@ -49,6 +49,18 @@ function renderHome() {
   grid.querySelectorAll(".area-card").forEach((card) => {
     card.addEventListener("click", () => goToArea(card.dataset.area));
   });
+
+  // Ripristina la vista home salvata
+  const savedView = localStorage.getItem("consulente-hub-home-view") || "grid";
+  if (savedView === "list") {
+    grid.classList.add("list-view");
+    document.getElementById("homeViewListBtn")?.setAttribute("aria-pressed", "true");
+    document.getElementById("homeViewGridBtn")?.setAttribute("aria-pressed", "false");
+  } else {
+    grid.classList.remove("list-view");
+    document.getElementById("homeViewGridBtn")?.setAttribute("aria-pressed", "true");
+    document.getElementById("homeViewListBtn")?.setAttribute("aria-pressed", "false");
+  }
 }
 
 function renderDetail(areaId) {
@@ -83,16 +95,16 @@ function renderDetail(areaId) {
     })
     .join("");
 
-  // Ripristina la vista attuale dopo il rendering
-  const savedView = localStorage.getItem("consulente-hub-view") || "list";
+  // Ripristina la vista dettaglio salvata
+  const savedView = localStorage.getItem("consulente-hub-detail-view") || "list";
   if (savedView === "grid") {
     list.classList.add("grid-view");
-    document.getElementById("viewGridBtn")?.setAttribute("aria-pressed", "true");
-    document.getElementById("viewListBtn")?.setAttribute("aria-pressed", "false");
+    document.getElementById("detailViewGridBtn")?.setAttribute("aria-pressed", "true");
+    document.getElementById("detailViewListBtn")?.setAttribute("aria-pressed", "false");
   } else {
     list.classList.remove("grid-view");
-    document.getElementById("viewListBtn")?.setAttribute("aria-pressed", "true");
-    document.getElementById("viewGridBtn")?.setAttribute("aria-pressed", "false");
+    document.getElementById("detailViewListBtn")?.setAttribute("aria-pressed", "true");
+    document.getElementById("detailViewGridBtn")?.setAttribute("aria-pressed", "false");
   }
 }
 
