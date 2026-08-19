@@ -1,0 +1,47 @@
+/* ==========================================================================
+   COMPONENT: ViewToggle
+   Interruttore griglia/elenco condiviso da home (AreaGrid) e dettaglio
+   (LinkList) — vedi js/components/view-toggle.js.
+   ========================================================================== */
+
+.view-toggle {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+.view-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink-muted);
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+.view-toggle-btn svg {
+  width: 18px;
+  height: 18px;
+}
+.view-toggle-btn:hover {
+  background: var(--surface-hover);
+  color: var(--ink);
+}
+.view-toggle-btn[aria-pressed="true"] {
+  background: var(--gold);
+  color: var(--bg);
+  box-shadow: 0 2px 8px rgba(201, 162, 39, 0.3);
+}
+body.light-theme .view-toggle-btn[aria-pressed="true"] {
+  color: #fff;
+}

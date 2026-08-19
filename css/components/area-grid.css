@@ -1,0 +1,158 @@
+/* ==========================================================================
+   COMPONENT: AreaGrid
+   Griglia delle categorie in home — vedi js/components/area-grid.js.
+   L'animazione di comparsa (card-in) è condivisa con LinkList ed è
+   definita in animations.css.
+   ========================================================================== */
+
+/* Vista predefinita: griglia a contenitori */
+.area-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+/* Vista elenco */
+.area-grid.list-view {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.area-grid.list-view .area-card {
+  flex-direction: row;
+  align-items: center;
+  padding: 14px 20px;
+  gap: 14px;
+}
+.area-grid.list-view .area-card .area-icon {
+  width: 36px;
+  height: 36px;
+  flex: none;
+}
+.area-grid.list-view .area-card .area-icon svg {
+  width: 17px;
+  height: 17px;
+}
+.area-grid.list-view .area-card .area-card-label {
+  font-size: 16px;
+}
+.area-grid.list-view .area-card .area-card-desc {
+  font-size: 13px;
+}
+.area-grid.list-view .area-card .area-card-count {
+  margin-top: 0;
+  margin-left: auto;
+  gap: 8px;
+}
+.area-grid.list-view .area-card:hover,
+.area-grid.list-view .area-card:focus-visible {
+  transform: translateX(4px);
+}
+
+.area-card {
+  position: relative;
+  text-align: left;
+  padding: 22px 20px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(165deg, var(--surface), var(--bg-elevated));
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: card-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.3s ease;
+}
+.area-card:hover,
+.area-card:focus-visible {
+  border-color: var(--border-strong);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-soft);
+}
+.area-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.area-icon svg {
+  width: 19px;
+  height: 19px;
+}
+.accent-gold .area-icon {
+  background: rgba(201, 162, 39, 0.14);
+  color: var(--gold-bright);
+}
+.accent-emerald .area-icon {
+  background: rgba(46, 125, 107, 0.18);
+  color: var(--emerald-bright);
+}
+.accent-sapphire .area-icon {
+  background: rgba(58, 122, 201, 0.16);
+  color: var(--sapphire-bright);
+}
+.accent-ruby .area-icon {
+  background: rgba(196, 68, 84, 0.16);
+  color: var(--ruby-bright);
+}
+.area-card-label {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+}
+.area-card-desc {
+  font-size: 13.5px;
+  color: var(--ink-muted);
+  line-height: 1.45;
+}
+.area-card-count {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.area-card-count-text {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-faint);
+  letter-spacing: 0.04em;
+}
+.area-card-go {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-faint);
+  border: 1px solid var(--border);
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+.area-card-go svg {
+  width: 13px;
+  height: 13px;
+}
+.area-card:hover .area-card-go {
+  color: var(--gold-bright);
+  border-color: var(--border-strong);
+  transform: translateX(2px);
+}
+
+@media (max-width: 560px) {
+  .area-grid.list-view .area-card {
+    flex-wrap: wrap;
+  }
+}

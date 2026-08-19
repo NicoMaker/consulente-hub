@@ -1,0 +1,158 @@
+/* ==========================================================================
+   COMPONENT: LinkList
+   Intestazione della pagina di dettaglio ed elenco dei link di una
+   categoria — vedi js/components/link-list.js. L'animazione di comparsa
+   (card-in) è condivisa con AreaGrid ed è definita in animations.css.
+   ========================================================================== */
+
+/* Intestazione dettaglio (titolo + descrizione categoria) */
+.detail-head {
+  padding: 44px 0 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.detail-head-left {
+  flex: 1;
+}
+.detail-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(26px, 4vw, 34px);
+  margin-bottom: 8px;
+}
+.detail-desc {
+  color: var(--ink-muted);
+  font-size: 14.5px;
+  max-width: 480px;
+}
+.detail-head-right {
+  flex: none;
+  padding-top: 4px;
+}
+
+/* Vista predefinita: elenco */
+.link-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+/* Vista griglia */
+.link-list.grid-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.link-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  opacity: 0;
+  transform: translateY(10px);
+  animation: card-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.link-card:hover,
+.link-card:focus-visible {
+  border-color: var(--border-strong);
+  background: var(--surface-hover);
+  transform: translateX(4px);
+}
+.grid-view .link-card {
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  padding: 22px 20px;
+}
+.grid-view .link-card:hover,
+.grid-view .link-card:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-soft);
+}
+.grid-view .link-icon {
+  margin-bottom: 4px;
+}
+.grid-view .link-go {
+  margin-top: 8px;
+  align-self: flex-end;
+}
+
+.link-icon {
+  flex: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(201, 162, 39, 0.12);
+  color: var(--gold-bright);
+  overflow: hidden;
+}
+.link-icon svg {
+  width: 19px;
+  height: 19px;
+}
+.link-body {
+  flex: 1;
+  min-width: 0;
+}
+.link-title {
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 2px;
+}
+.link-desc {
+  font-size: 13px;
+  color: var(--ink-muted);
+}
+.link-go {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-faint);
+  border: 1px solid var(--border);
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+.link-go svg {
+  width: 13px;
+  height: 13px;
+}
+.link-card:hover .link-go {
+  color: var(--gold-bright);
+  border-color: var(--border-strong);
+  transform: translateX(2px);
+}
+
+@media (max-width: 560px) {
+  .detail-head {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .detail-head-right {
+    align-self: flex-end;
+  }
+  .link-list.grid-view {
+    grid-template-columns: 1fr;
+  }
+}

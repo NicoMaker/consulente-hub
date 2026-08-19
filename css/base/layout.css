@@ -1,0 +1,18 @@
+/* ==========================================================================
+   BASE: LAYOUT — contenitore condiviso dalle "pagine" (home, dettaglio).
+   L'animazione di comparsa/scomparsa vive in animations.css, non qui.
+   ========================================================================== */
+
+.page {
+  position: relative;
+  z-index: 1;
+  max-width: var(--content-w);
+  margin: 0 auto;
+  padding: 0 24px 96px;
+}
+
+@media (max-width: 560px) {
+  .page {
+    padding: 0 16px 72px;
+  }
+}

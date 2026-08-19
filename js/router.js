@@ -1,12 +1,12 @@
 /* ==========================================================================
-   NAVIGATION — passaggio home ↔ dettaglio, con hash condivisibile (#area=id)
+   ROUTER — passaggio home ↔ dettaglio, con hash condivisibile (#area=id)
    ========================================================================== */
 
 function goToArea(areaId, pushHash = true) {
   const area = AREAS.find((a) => a.id === areaId);
   if (!area) return;
 
-  renderDetail(areaId);
+  LinkList.render(areaId);
 
   document.getElementById("screenHome").classList.remove("is-active");
   document.getElementById("screenDetail").classList.add("is-active");

@@ -17,7 +17,21 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="css/styles.css" />
+    <!-- CSS — architettura a componenti, uno per file (css/components/) -->
+    <link rel="stylesheet" href="css/base/tokens.css" />
+    <link rel="stylesheet" href="css/base/reset.css" />
+    <link rel="stylesheet" href="css/base/layout.css" />
+    <link rel="stylesheet" href="css/components/header.css" />
+    <link rel="stylesheet" href="css/components/identity.css" />
+    <link rel="stylesheet" href="css/components/theme-toggle.css" />
+    <link rel="stylesheet" href="css/components/intro-splash.css" />
+    <link rel="stylesheet" href="css/components/hero.css" />
+    <link rel="stylesheet" href="css/components/growth-chart.css" />
+    <link rel="stylesheet" href="css/components/icon-registry.css" />
+    <link rel="stylesheet" href="css/components/view-toggle.css" />
+    <link rel="stylesheet" href="css/components/area-grid.css" />
+    <link rel="stylesheet" href="css/components/link-list.css" />
+    <link rel="stylesheet" href="css/components/data-error.css" />
     <link rel="stylesheet" href="css/animations.css" />
 
     <link
@@ -270,12 +284,20 @@
       </div>
     </div>
 
-    <!-- SCRIPTS -->
-    <script src="js/icons.js"></script>
-    <script src="js/data.js"></script>
-    <script src="js/render.js"></script>
-    <script src="js/navigation.js"></script>
-    <script src="js/animations.js"></script>
-    <script src="js/init.js"></script>
+    <!-- SCRIPTS — architettura a componenti, uno per file (js/components/) -->
+    <script src="js/components/icon-registry.js"></script>
+    <script src="js/components/utils.js"></script>
+    <script src="js/state.js"></script>
+    <script src="js/components/identity.js"></script>
+    <script src="js/components/hero.js"></script>
+    <script src="js/components/theme-toggle.js"></script>
+    <script src="js/components/view-toggle.js"></script>
+    <script src="js/components/area-grid.js"></script>
+    <script src="js/components/link-list.js"></script>
+    <script src="js/components/intro-splash.js"></script>
+    <script src="js/components/growth-chart.js"></script>
+    <script src="js/components/data-error.js"></script>
+    <script src="js/router.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>

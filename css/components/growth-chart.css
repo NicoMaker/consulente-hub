@@ -1,0 +1,26 @@
+/* ==========================================================================
+   COMPONENT: GrowthChart — vedi js/components/growth-chart.js.
+   ========================================================================== */
+
+.chart-path {
+  fill: none;
+  stroke: url(#chartGradient);
+  stroke-width: 2;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 8px rgba(201, 162, 39, 0.25));
+}
+
+.chart-path-fill {
+  fill: url(#chartFillGradient);
+  opacity: 0.5;
+}
+
+.chart-marker {
+  fill: var(--gold-bright);
+  filter: drop-shadow(0 0 6px rgba(232, 200, 92, 0.7));
+}
+
+.chart-grid line {
+  stroke: rgba(154, 167, 189, 0.08);
+  stroke-width: 1;
+}

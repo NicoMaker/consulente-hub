@@ -1,31 +1,9 @@
 /* ==========================================================================
-   ANIMATIONS — intro splash + growth-line ambientale (elemento firma)
+   COMPONENT: GrowthChart
+   Disegna un tracciato "di crescita" nell'header della hero e lo anima in
+   loop lento: il segno distintivo dell'hub, al posto di orbi/rumore.
    ========================================================================== */
 
-const prefersReducedMotion = window.matchMedia(
-  "(prefers-reduced-motion: reduce)",
-).matches;
-
-function runIntro(onDone) {
-  const splash = document.getElementById("introSplash");
-
-  if (prefersReducedMotion || !splash) {
-    if (splash) splash.remove();
-    onDone();
-    return;
-  }
-
-  requestAnimationFrame(() => splash.classList.add("is-drawing"));
-
-  setTimeout(() => {
-    splash.classList.add("is-hidden");
-    onDone();
-    setTimeout(() => splash.remove(), 550);
-  }, 1250);
-}
-
-/* Disegna un tracciato "di crescita" nell'header della hero e lo anima
-   in loop lento: il segno distintivo dell'hub, al posto di orbi/rumore. */
 function initGrowthChart() {
   const path = document.getElementById("chartPath");
   const fill = document.getElementById("chartPathFill");

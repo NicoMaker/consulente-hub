@@ -1,5 +1,7 @@
 /* ==========================================================================
-   TRANSIZIONI PAGINA
+   TRANSIZIONI DI PAGINA E RIDUZIONE MOVIMENTO
+   File trasversale (come js/router.js e js/app.js): non appartiene a un
+   singolo componente, coordina l'insieme.
    ========================================================================== */
 
 .page {
@@ -22,36 +24,13 @@
   }
 }
 
-/* ==========================================================================
-   AMBIENT GROWTH-LINE (elemento firma)
-   ========================================================================== */
-
-.chart-path {
-  fill: none;
-  stroke: url(#chartGradient);
-  stroke-width: 2;
-  stroke-linecap: round;
-  filter: drop-shadow(0 0 8px rgba(201, 162, 39, 0.25));
+/* Animazione di comparsa condivisa da AreaGrid e LinkList */
+@keyframes card-in {
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
-
-.chart-path-fill {
-  fill: url(#chartFillGradient);
-  opacity: 0.5;
-}
-
-.chart-marker {
-  fill: var(--gold-bright);
-  filter: drop-shadow(0 0 6px rgba(232, 200, 92, 0.7));
-}
-
-.chart-grid line {
-  stroke: rgba(154, 167, 189, 0.08);
-  stroke-width: 1;
-}
-
-/* ==========================================================================
-   RIDUZIONE MOVIMENTO
-   ========================================================================== */
 
 @media (prefers-reduced-motion: reduce) {
   *,

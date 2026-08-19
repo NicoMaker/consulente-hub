@@ -1,0 +1,13 @@
+/* ==========================================================================
+   COMPONENT: IconRegistry
+   Quando in data.json al posto del nome di un'icona viene indicato il
+   percorso/URL di un'immagine (icona personalizzata o logo), icon()
+   restituisce un <img class="icon-img">: questo è il suo stile.
+   ========================================================================== */
+
+.icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+}

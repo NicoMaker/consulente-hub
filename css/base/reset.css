@@ -1,0 +1,74 @@
+/* ==========================================================================
+   BASE: RESET — azzeramento stili browser e primitive globali riusate da
+   più componenti (eyebrow, visually-hidden, griglia di sfondo "ledger").
+   ========================================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.ledger-grid {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(201, 162, 39, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201, 162, 39, 0.045) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: radial-gradient(
+    ellipse 80% 60% at 50% 0%,
+    #000 40%,
+    transparent 90%
+  );
+  transition: opacity 0.3s ease;
+}
+body.light-theme .ledger-grid {
+  background-image:
+    linear-gradient(rgba(139, 119, 70, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 119, 70, 0.08) 1px, transparent 1px);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}

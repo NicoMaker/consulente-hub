@@ -1,0 +1,52 @@
+/* ==========================================================================
+   BASE: TOKENS — variabili di design condivise da tutti i componenti.
+   ========================================================================== */
+
+:root {
+  --bg: #0b1220;
+  --bg-elevated: #0e1729;
+  --surface: #121c30;
+  --surface-hover: #17223a;
+  --border: rgba(201, 162, 39, 0.16);
+  --border-strong: rgba(201, 162, 39, 0.32);
+  --gold: #c9a227;
+  --gold-bright: #e8c85c;
+  --gold-dim: #8a6f22;
+  --emerald: #2e7d6b;
+  --emerald-bright: #45a68f;
+  --sapphire: #3a5f9c;
+  --sapphire-bright: #5b8fd6;
+  --ruby: #9c3a4c;
+  --ruby-bright: #c9566b;
+  --ink: #f2efe6;
+  --ink-muted: #9aa7bd;
+  --ink-faint: #5c6b82;
+  --shadow-soft: 0 20px 60px -20px rgba(0, 0, 0, 0.6);
+  --shadow-lift: 0 24px 70px -18px rgba(201, 162, 39, 0.22);
+  --font-display: "Fraunces", "Iowan Old Style", serif;
+  --font-body:
+    "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --header-h: 76px;
+  --content-w: 880px;
+}
+
+body.light-theme {
+  --bg: #f5f3ef;
+  --bg-elevated: #ece8e0;
+  --surface: #ffffff;
+  --surface-hover: #f0ede7;
+  --border: rgba(139, 119, 70, 0.2);
+  --border-strong: rgba(139, 119, 70, 0.4);
+  --gold: #b58a2a;
+  --gold-bright: #d4a832;
+  --gold-dim: #8a6f22;
+  --ink: #1a1e2a;
+  --ink-muted: #4a5268;
+  --ink-faint: #7a8499;
+  --shadow-soft: 0 20px 60px -20px rgba(0, 0, 0, 0.15);
+  --shadow-lift: 0 24px 70px -18px rgba(201, 162, 39, 0.25);
+}
