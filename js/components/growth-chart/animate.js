@@ -1,30 +1,12 @@
 /* ==========================================================================
-   COMPONENT: GrowthChart
-   Disegna un tracciato "di crescita" nell'header della hero e lo anima in
-   loop lento: il segno distintivo dell'hub, al posto di orbi/rumore.
+   COMPONENT: GrowthChart — animazione
+   Loop di animazione (requestAnimationFrame) che disegna il tracciato in
+   loop lento, con marker e riempimento sincronizzati. Richiamato da
+   setup.js dopo l'inizializzazione, solo quando l'utente non ha richiesto
+   "prefers-reduced-motion".
    ========================================================================== */
 
-function initGrowthChart() {
-  const path = document.getElementById("chartPath");
-  const fill = document.getElementById("chartPathFill");
-  const marker = document.getElementById("chartMarker");
-  if (!path) return;
-
-  const length = path.getTotalLength();
-  path.style.strokeDasharray = `${length}`;
-  path.style.strokeDashoffset = `${length}`;
-
-  if (prefersReducedMotion) {
-    path.style.strokeDashoffset = "0";
-    if (fill) fill.style.opacity = "0.5";
-    if (marker) {
-      const end = path.getPointAtLength(length);
-      marker.setAttribute("cx", end.x);
-      marker.setAttribute("cy", end.y);
-    }
-    return;
-  }
-
+function animateGrowthChart({ path, fill, marker, length }) {
   const duration = 3400;
   const pause = 1400;
   let start = null;
