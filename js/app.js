@@ -1,6 +1,6 @@
 /* ==========================================================================
    APP — punto di ingresso: carica data.json, poi monta i componenti.
-   Ogni componente vive nella cartella js/components/ ed è responsabile di
+   Ogni componente vive nella propria cartella in components/ ed è responsabile di
    una sola parte dell'interfaccia (icone, identità, hero, aree, link,
    tema, viste, animazioni, errore dati). Questo file li mette in ordine.
    ========================================================================== */

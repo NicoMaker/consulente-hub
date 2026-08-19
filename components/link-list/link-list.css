@@ -1,7 +1,7 @@
 /* ==========================================================================
    COMPONENT: LinkList
    Intestazione della pagina di dettaglio ed elenco dei link di una
-   categoria — vedi js/components/link-list.js. L'animazione di comparsa
+   categoria — vedi components/link-list/link-list.js. L'animazione di comparsa
    (card-in) è condivisa con AreaGrid ed è definita in animations.css.
    ========================================================================== */
 
