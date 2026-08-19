@@ -83,7 +83,19 @@ const ICONS = {
 
 // Elenco ordinato dei nomi icona "di base" disponibili in libreria
 const ICON_NAMES = Object.keys(ICONS).filter(
-  (name) => !["grid", "list", "close", "check", "plus", "trash", "upload", "edit", "arrowUp", "arrowDown"].includes(name),
+  (name) =>
+    ![
+      "grid",
+      "list",
+      "close",
+      "check",
+      "plus",
+      "trash",
+      "upload",
+      "edit",
+      "arrowUp",
+      "arrowDown",
+    ].includes(name),
 );
 
 // Riconosce se il valore passato è un'icona del set predefinito oppure

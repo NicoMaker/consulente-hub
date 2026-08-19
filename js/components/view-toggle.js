@@ -16,7 +16,14 @@
    ========================================================================== */
 
 const ViewToggle = {
-  create({ container, gridBtnId, listBtnId, storageKey, defaultView, activeClass }) {
+  create({
+    container,
+    gridBtnId,
+    listBtnId,
+    storageKey,
+    defaultView,
+    activeClass,
+  }) {
     const gridBtn = document.getElementById(gridBtnId);
     const listBtn = document.getElementById(listBtnId);
 
