@@ -3,6 +3,9 @@
    Griglia delle categorie in home — vedi components/area-grid/area-grid.js.
    L'animazione di comparsa (card-in) è condivisa con LinkList ed è
    definita in animations.css.
+
+   La vista alternativa "elenco" (list-view) sta in
+   area-grid-list-view.css, incluso subito dopo questo file.
    ========================================================================== */
 
 /* Vista predefinita: griglia a contenitori */
@@ -10,43 +13,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 16px;
-}
-
-/* Vista elenco */
-.area-grid.list-view {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.area-grid.list-view .area-card {
-  flex-direction: row;
-  align-items: center;
-  padding: 14px 20px;
-  gap: 14px;
-}
-.area-grid.list-view .area-card .area-icon {
-  width: 36px;
-  height: 36px;
-  flex: none;
-}
-.area-grid.list-view .area-card .area-icon svg {
-  width: 17px;
-  height: 17px;
-}
-.area-grid.list-view .area-card .area-card-label {
-  font-size: 16px;
-}
-.area-grid.list-view .area-card .area-card-desc {
-  font-size: 13px;
-}
-.area-grid.list-view .area-card .area-card-count {
-  margin-top: 0;
-  margin-left: auto;
-  gap: 8px;
-}
-.area-grid.list-view .area-card:hover,
-.area-grid.list-view .area-card:focus-visible {
-  transform: translateX(4px);
 }
 
 .area-card {
@@ -149,10 +115,4 @@
   color: var(--gold-bright);
   border-color: var(--border-strong);
   transform: translateX(2px);
-}
-
-@media (max-width: 560px) {
-  .area-grid.list-view .area-card {
-    flex-wrap: wrap;
-  }
 }

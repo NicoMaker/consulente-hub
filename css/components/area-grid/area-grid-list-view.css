@@ -1,0 +1,48 @@
+/* ==========================================================================
+   COMPONENT: AreaGrid — vista elenco
+   Variante "elenco" (list-view) della griglia delle categorie, attivata
+   dal componente view-toggle. Gli stili di base della griglia e della
+   card stanno in area-grid.css, incluso prima di questo file.
+   ========================================================================== */
+
+.area-grid.list-view {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.area-grid.list-view .area-card {
+  flex-direction: row;
+  align-items: center;
+  padding: 14px 20px;
+  gap: 14px;
+}
+.area-grid.list-view .area-card .area-icon {
+  width: 36px;
+  height: 36px;
+  flex: none;
+}
+.area-grid.list-view .area-card .area-icon svg {
+  width: 17px;
+  height: 17px;
+}
+.area-grid.list-view .area-card .area-card-label {
+  font-size: 16px;
+}
+.area-grid.list-view .area-card .area-card-desc {
+  font-size: 13px;
+}
+.area-grid.list-view .area-card .area-card-count {
+  margin-top: 0;
+  margin-left: auto;
+  gap: 8px;
+}
+.area-grid.list-view .area-card:hover,
+.area-grid.list-view .area-card:focus-visible {
+  transform: translateX(4px);
+}
+
+@media (max-width: 560px) {
+  .area-grid.list-view .area-card {
+    flex-wrap: wrap;
+  }
+}

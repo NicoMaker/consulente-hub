@@ -1,0 +1,37 @@
+/* ==========================================================================
+   COMPONENT: LinkList — vista griglia
+   Variante "griglia" (grid-view) dell'elenco dei link di una categoria,
+   attivata dal componente view-toggle. Gli stili di base dell'elenco e
+   della card stanno in link-list.css, incluso prima di questo file.
+   ========================================================================== */
+
+.link-list.grid-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.grid-view .link-card {
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  padding: 22px 20px;
+}
+.grid-view .link-card:hover,
+.grid-view .link-card:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-soft);
+}
+.grid-view .link-icon {
+  margin-bottom: 4px;
+}
+.grid-view .link-go {
+  margin-top: 8px;
+  align-self: flex-end;
+}
+
+@media (max-width: 560px) {
+  .link-list.grid-view {
+    grid-template-columns: 1fr;
+  }
+}
